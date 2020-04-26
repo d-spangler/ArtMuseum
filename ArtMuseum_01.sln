@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtMuseum.API", "ArtMuseum.API\ArtMuseum.API.csproj", "{E4615A07-0FD3-4A25-8087-8507C0D11C55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtMuseum.Data", "ArtMuseum.Data\ArtMuseum.Data.csproj", "{5E84BF72-924D-40C0-AC1F-55557B22EE4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtMuseum.Models", "ArtMuseum.Models\ArtMuseum.Models.csproj", "{7ACCB981-0614-48EB-BB35-AEBAA11EAD9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtMuseum.Services", "ArtMuseum.Services\ArtMuseum.Services.csproj", "{E65FA161-1B4B-40F1-B413-F931EACAC526}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4615A07-0FD3-4A25-8087-8507C0D11C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4615A07-0FD3-4A25-8087-8507C0D11C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4615A07-0FD3-4A25-8087-8507C0D11C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4615A07-0FD3-4A25-8087-8507C0D11C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E84BF72-924D-40C0-AC1F-55557B22EE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E84BF72-924D-40C0-AC1F-55557B22EE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E84BF72-924D-40C0-AC1F-55557B22EE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E84BF72-924D-40C0-AC1F-55557B22EE4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ACCB981-0614-48EB-BB35-AEBAA11EAD9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ACCB981-0614-48EB-BB35-AEBAA11EAD9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ACCB981-0614-48EB-BB35-AEBAA11EAD9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ACCB981-0614-48EB-BB35-AEBAA11EAD9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65FA161-1B4B-40F1-B413-F931EACAC526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65FA161-1B4B-40F1-B413-F931EACAC526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65FA161-1B4B-40F1-B413-F931EACAC526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65FA161-1B4B-40F1-B413-F931EACAC526}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36A8E6CB-5AA7-445E-B89C-6E69E8B94641}
+	EndGlobalSection
+EndGlobal
