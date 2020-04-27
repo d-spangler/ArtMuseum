@@ -24,6 +24,6 @@ namespace ArtMuseum.Data
         [Required]
         public int CountryCode { get; set; }
 
-        public List<string> CollectedWorks = new List<string>();
+        public List<string> CollectedWorks { get; set; }
     }
 }
