@@ -23,10 +23,8 @@ namespace ArtMuseum.Data
         [Required]
         public string LocationCountry { get; set; }
 
-        [Required]
         public int CountryCode { get; set; }
 
-        
         public ICollection<Artwork> CollectedWorks { get; set; }
     }
 }

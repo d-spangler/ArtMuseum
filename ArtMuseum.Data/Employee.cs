@@ -20,10 +20,10 @@ namespace ArtMuseum.Data
 
         [Required] public string Position { get; set; }
 
-        [Required] public string Museum { get; set; }
+        [Required] public int Location { get; set; } //Position in the museum db
 
         [ForeignKey(nameof(Location))]
-        public int Location { get; set; }
+        public virtual Museum Museum { get; set; }
 
         //public int ClearanceLevel {get; set;} -----Stretch Goal-----
     }
