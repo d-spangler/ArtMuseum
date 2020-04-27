@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +12,7 @@ namespace ArtMuseum.Data
     public class Museums
     {
         [Key]
-        public Guid MuseumId { get; set; }
+        public int MuseumId { get; set; }
 
         [Required]
         public string MuseumName { get; set; }
@@ -24,6 +26,7 @@ namespace ArtMuseum.Data
         [Required]
         public int CountryCode { get; set; }
 
-        public ICollection<string> CollectedWorks { get; set; }
+        
+        public ICollection<Artwork> CollectedWorks { get; set; }
     }
 }
