@@ -9,6 +9,10 @@ namespace ArtMuseum.Data
 {
     public class Transfer
     {
+        //We are probably going to use transfer as a stretch goal now too...
+
+
+
         [Key]
         public Guid TransferId { get; set; }
 
