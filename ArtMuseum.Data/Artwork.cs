@@ -35,10 +35,10 @@ namespace ArtMuseum.Data
         public string Medium { get; set; }
 
         [Required]
-        public Type type { get; set; }
+        public Type Type { get; set; }
 
         [Required]
-        public Era era { get; set; }
+        public Era Era { get; set; }
 
     }
 }
