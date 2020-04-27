@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ArtMuseum.Data
 {
-    public class Museums
+    public class Museum
     {
         [Key]
         public int MuseumId { get; set; }
@@ -26,7 +26,6 @@ namespace ArtMuseum.Data
         [Required]
         public int CountryCode { get; set; }
 
-        
         public ICollection<Artwork> CollectedWorks { get; set; }
     }
 }
