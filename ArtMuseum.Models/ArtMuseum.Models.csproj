@@ -42,8 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="ArtworkCreate.cs" />
     <Compile Include="EmployeeCreate.cs" />
+=======
+    <Compile Include="MuseumCreate.cs" />
+    <Compile Include="MuseumDetail.cs" />
+>>>>>>> 7a56572242a5392909cf8a17b6d7643e3ffa79a9
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
