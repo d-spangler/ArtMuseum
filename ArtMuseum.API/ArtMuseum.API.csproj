@@ -222,6 +222,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArtworkController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -411,6 +412,14 @@
     <ProjectReference Include="..\ArtMuseum.Data\ArtMuseum.Data.csproj">
       <Project>{5E84BF72-924D-40C0-AC1F-55557B22EE4A}</Project>
       <Name>ArtMuseum.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArtMuseum.Models\ArtMuseum.Models.csproj">
+      <Project>{7accb981-0614-48eb-bb35-aebaa11ead9c}</Project>
+      <Name>ArtMuseum.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArtMuseum.Services\ArtMuseum.Services.csproj">
+      <Project>{e65fa161-1b4b-40f1-b413-f931eacac526}</Project>
+      <Name>ArtMuseum.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

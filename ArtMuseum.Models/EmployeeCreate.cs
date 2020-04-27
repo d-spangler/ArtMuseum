@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ArtMuseum.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +11,7 @@ namespace ArtMuseum.Models
 {
     public class EmployeeCreate
     {
-        [Required] public int Id { get; set; }
+        [Required] public string Id { get; set; }
 
         [Required] public string FirstName { get; set; }
 
@@ -17,7 +19,9 @@ namespace ArtMuseum.Models
 
         [Required] public string Position { get; set; }
 
-        [Required] public string Location { get; set; }
+        [Required] public int Location { get; set; }
+
+        [ForeignKey(nameof(Location))] public virtual Museum Museum { get; set; }
 
         //public int ClearanceLevel {get; set;} -----Stretch Goal-----
     }
