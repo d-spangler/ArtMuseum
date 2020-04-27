@@ -10,7 +10,7 @@ namespace ArtMuseum.Data
 {
     public class Employee
     {
-        [Key] public int EmployeeDbId { get; set; }
+        [Key] public int DbId { get; set; }
 
         [Required] public string Id { get; set; }
 
@@ -20,10 +20,10 @@ namespace ArtMuseum.Data
 
         [Required] public string Position { get; set; }
 
-        [Required] public string Museum { get; set; }
+        [Required] public int Location { get; set; }
 
         [ForeignKey(nameof(Location))]
-        public int Location { get; set; }
+        public virtual Museum Museum { get; set; }
 
         //public int ClearanceLevel {get; set;} -----Stretch Goal-----
     }
