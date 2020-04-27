@@ -14,7 +14,7 @@ namespace ArtMuseum.Data
 
 
         [Key]
-        public Guid TransferId { get; set; }
+        public int TransferId { get; set; }
 
         [Required]
         public string MuseumSend { get; set; }
