@@ -20,7 +20,7 @@ namespace ArtMuseum.Data
 
         [Required] public string Position { get; set; }
 
-        [Required] public string Location { get; set; }
+        [Required] public int Location { get; set; } //Position in the museum db
 
         [ForeignKey(nameof(Location))]
         public virtual Museum Museum { get; set; }

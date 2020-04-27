@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ArtMuseum.Models
 {
-    public class MuseumCreate
+    public class MuseumEdit
     {
-        [Required]
+        public int MuseumId { get; set; }
         public string MuseumName { get; set; }
 
-        [Required]
         public string LocationCity { get; set; }
 
-        [Required]
         public string LocationCountry { get; set; }
-
     }
 }
