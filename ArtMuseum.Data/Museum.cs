@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ArtMuseum.Data
 {
-    public class Museums
+    public class Museum
     {
         [Key]
         public int MuseumId { get; set; }

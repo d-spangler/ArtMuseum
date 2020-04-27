@@ -33,7 +33,7 @@ namespace ArtMuseum.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Museum> Museums { get; set; }
+        public DbSet <Museum> Museums { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
