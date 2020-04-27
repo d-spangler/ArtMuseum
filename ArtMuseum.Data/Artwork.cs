@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace ArtMuseum.Data
 {
     public enum Type { FrescoPainting = 1, Painting, Sculpture }
+   
     public enum Era { Renaissance = 1, Realism, Hellenistic, Impressionism, Romantic, Baroque }
 
     public class Artwork
@@ -32,6 +33,12 @@ namespace ArtMuseum.Data
 
         [Required]
         public string Medium { get; set; }
+
+        [Required]
+        public Type type { get; set; }
+
+        [Required]
+        public Era era { get; set; }
 
     }
 }
