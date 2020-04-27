@@ -41,10 +41,10 @@ namespace ArtMuseum.Services
         //GetAll
         public IEnumerable<MuseumListItem> GetMuseums()
         {
-            using (var ctx = new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 var queary =
-                    ctx
+                    db
                         .Museums
                         .Select(
                             e =>
@@ -61,10 +61,10 @@ namespace ArtMuseum.Services
         //GetById
         public MuseumDetail GetMuseumById(int id)
         {
-            using (var ctx = new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    db
                         .Museums
                         .Single(e => e.MuseumId == id);
                 return
@@ -80,12 +80,12 @@ namespace ArtMuseum.Services
         public MuseumDetail GetMuseumByName(string name)
         {
             
-            using (var ctx = new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 if (name != null)
                 {
                     var entity =
-                    ctx
+                    db
                         .Museums
                         .Single(e => e.MuseumName == name);
                     return
@@ -98,14 +98,20 @@ namespace ArtMuseum.Services
                 return null;
             }
         }
+
+        //CollectedWorksById
+        /*public ICollection<Artwork> GetArtworksById(int id)
+        {
+            using (var )
+        }*/
         
         //Update
         public bool UpdateMuseum(MuseumEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using(var db = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    db
                         .Museums
                         .Single(e => e.MuseumId == model.MuseumId);
 
@@ -114,23 +120,23 @@ namespace ArtMuseum.Services
                 entity.LocationCity = model.LocationCity;
                 entity.LocationCountry = model.LocationCountry;
 
-                return ctx.SaveChanges() == 1;
+                return db.SaveChanges() == 1;
             }
         }
 
         //Delete
         public bool DeleteMuseum(int museumId)
         {
-            using(var ctx = new ApplicationDbContext())
+            using(var db = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    db
                         .Museums
                         .Single(e => e.MuseumId == museumId);
 
-                ctx.Museums.Remove(entity);
+                db.Museums.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                return db.SaveChanges() == 1;
             }
         }
 

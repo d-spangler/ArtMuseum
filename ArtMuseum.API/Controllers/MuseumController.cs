@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using ArtMuseum.Models;
 using AutoMapper.Internal;
 using System.Web.Http.Controllers;
+using ArtMuseum.Data;
 
 namespace ArtMuseum.API.Controllers
 {
@@ -45,6 +46,16 @@ namespace ArtMuseum.API.Controllers
             var museum = museumServices.GetMuseumByName(name);
             return Ok(museum);
         }
+
+        /*[HttpGet]//Get collection via museum id
+        [Route("getcollection")]
+        public IHttpActionResult Get([FromUri]int id)
+        {
+            MuseumServices museumServices = CreateMuseumService();
+            var museum = museumServices.GetMuseumById(id);
+            return ICollection<CollectedWorks>
+        }*/
+
 
         [HttpPost]//Create
         public IHttpActionResult Post(MuseumCreate museum)
