@@ -20,8 +20,6 @@ namespace ArtMuseum.API.Controllers
             return Ok();
         }
 
-
-
         //GET ALL--BY MUSEUM
         [Route("museum")]
         public IHttpActionResult Get(int museum)
@@ -40,8 +38,22 @@ namespace ArtMuseum.API.Controllers
             return Ok(employee);
         }
 
+        //PUT
+        public IHttpActionResult Put(EmployeeEdit model)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var service = new EmployeeService();
+            if (!service.UpdateEmployee(model)) return InternalServerError();
+            return Ok();
+        }
 
-
+        //DELETE
+        public IHttpActionResult Delete(string id)
+        {
+            var service = new EmployeeService();
+            if (!service.DeleteEmployee(id)) return InternalServerError();
+            return Ok();
+        }
 
     }
 }
