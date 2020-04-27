@@ -5,17 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArtMuseum.Data
+namespace ArtMuseum.Models
 {
-    public enum Type { FrescoPainting = 1, Painting, Sculpture }
-   
-    public enum Era { Renaissance = 1, Realism, Hellenistic, Impressionism, Romantic, Baroque }
-
-    public class Artwork
+    public class ArtworkDetail
     {
-        [Key]
-        public int ArtworkId { get; set; }
-
         [Required]
         public string NameOfPiece { get; set; }
 
@@ -28,7 +21,6 @@ namespace ArtMuseum.Data
         [Required]
         public string LocationOfArtwork { get; set; }
 
-        [Required]
         public bool Availability { get; set; }
 
         [Required]
@@ -39,6 +31,5 @@ namespace ArtMuseum.Data
 
         [Required]
         public Era Era { get; set; }
-
     }
 }

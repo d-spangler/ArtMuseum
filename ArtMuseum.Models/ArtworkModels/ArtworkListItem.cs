@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtMuseum.Models
 {
-    public class ArtworkCreate
+    public class ArtworkListItem
     {
-        //nameofpiece type 
     }
 }
