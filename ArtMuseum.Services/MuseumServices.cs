@@ -11,6 +11,13 @@ namespace ArtMuseum.Services
 {
     public class MuseumServices
     {
+        private readonly Guid _userId;
+
+        public MuseumServices(Guid userId)
+        {
+            _userId = userId;
+        }
+
         //Create
         public bool CreateMuseum(MuseumCreate model)
         {
@@ -66,6 +73,29 @@ namespace ArtMuseum.Services
                             MuseumId = entity.MuseumId,
                             MuseumName = entity.MuseumName,
                         };
+            }
+        }
+
+        //GetByName
+        public MuseumDetail GetMuseumByName(string name)
+        {
+            
+            using (var ctx = new ApplicationDbContext())
+            {
+                if (name != null)
+                {
+                    var entity =
+                    ctx
+                        .Museums
+                        .Single(e => e.MuseumName == name);
+                    return
+                            new MuseumDetail
+                            {
+                                MuseumId = entity.MuseumId,
+                                MuseumName = entity.MuseumName,
+                            };
+                }
+                return null;
             }
         }
         

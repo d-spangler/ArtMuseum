@@ -42,13 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="ArtworkCreate.cs" />
     <Compile Include="EmployeeCreate.cs" />
-
     <Compile Include="MuseumCreate.cs" />
     <Compile Include="MuseumDetail.cs" />
-
+    <Compile Include="MuseumEdit.cs" />
+    <Compile Include="MuseumListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
