@@ -14,7 +14,7 @@ namespace ArtMuseum.Data
     public class Artwork
     {
         [Key]
-        public Guid ArtworkId { get; set; }
+        public int ArtworkId { get; set; }
 
         [Required]
         public string NameOfPiece { get; set; }
