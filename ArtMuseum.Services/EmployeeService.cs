@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ArtMuseum.Services
 {
-    class EmployeeService
+    public class EmployeeService
     {
         //POST
         public bool NewEmployee(EmployeeCreate model)
@@ -35,7 +35,7 @@ namespace ArtMuseum.Services
         {
             using (var db = new ApplicationDbContext())
             {
-                var list=
+                var query =
                 db.Employees.Where(e => e.Location == museumId).Select(e => new EmployeeListItem
                 {
                     Id = e.Id,
@@ -43,7 +43,7 @@ namespace ArtMuseum.Services
                     LastName = e.LastName,
                     Position = e.Position,
                 });
-                return list.ToArray();
+                return query.ToArray();
             }
         }
 
