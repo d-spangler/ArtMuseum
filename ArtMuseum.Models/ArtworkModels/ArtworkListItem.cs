@@ -8,5 +8,10 @@ namespace ArtMuseum.Models
 {
     public class ArtworkListItem
     {
+        public int ArtworkId { get; set; }
+
+        public string NameOfPiece { get; set; }
+
+        public string Artist { get; set; }
     }
 }

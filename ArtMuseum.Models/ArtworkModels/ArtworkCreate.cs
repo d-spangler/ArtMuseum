@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArtMuseum.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,9 +8,6 @@ using System.Threading.Tasks;
 
 namespace ArtMuseum.Models
 {
-    public enum Type { FrescoPainting = 1, Painting, Sculpture }
-
-    public enum Era { Renaissance = 1, Realism, Hellenistic, Impressionism, Romantic, Baroque }
     public class ArtworkCreate
     {
         //nameofpiece type 
@@ -31,7 +29,7 @@ namespace ArtMuseum.Models
         public string Medium { get; set; }
 
         [Required]
-        public Type Type { get; set; }
+        public Types Types { get; set; }
 
         [Required]
         public Era Era { get; set; }

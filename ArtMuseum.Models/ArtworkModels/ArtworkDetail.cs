@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArtMuseum.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,27 +10,24 @@ namespace ArtMuseum.Models
 {
     public class ArtworkDetail
     {
-        [Required]
+        public int ArtworkId { get; set; }
+
+        [Display(Name = "Name of Art Piece")]
         public string NameOfPiece { get; set; }
 
-        [Required]
+        [Display(Name = "Name of Artist")]
         public string Artist { get; set; }
 
-        [Required]
-        public string Description { get; set; }
-
-        [Required]
+        [Display(Name = "Location of Piece")]
         public string LocationOfArtwork { get; set; }
 
-        public bool Availability { get; set; }
-
-        [Required]
+        [Display(Name = "Medium")]
         public string Medium { get; set; }
 
-        [Required]
-        public Type Type { get; set; }
+        [Display(Name = "Type")]
+        public Types Types { get; set; }
 
-        [Required]
+        [Display(Name = "Era")]
         public Era Era { get; set; }
     }
 }
