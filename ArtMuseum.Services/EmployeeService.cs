@@ -1,5 +1,4 @@
-﻿
-using ArtMuseum.Data;
+﻿using ArtMuseum.Data;
 using ArtMuseum.Models;
 using System;
 using System.Collections.Generic;

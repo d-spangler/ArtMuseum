@@ -1,21 +1,16 @@
-﻿using System;
+﻿using ArtMuseum.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArtMuseum.Data
+namespace ArtMuseum.Models
 {
-    public enum Types { FrescoPainting = 1, Painting, Sculpture }
-   
-    public enum Era { Renaissance = 1, Realism, Hellenistic, Impressionism, Romantic, Baroque }
-
-    public class Artwork
+    public class ArtworkCreate
     {
-        [Key]
-        public int ArtworkId { get; set; }
-
+        //nameofpiece type 
         [Required]
         public string NameOfPiece { get; set; }
 
@@ -28,17 +23,15 @@ namespace ArtMuseum.Data
         [Required]
         public string LocationOfArtwork { get; set; }
 
-        [Required]
         public bool Availability { get; set; }
 
         [Required]
         public string Medium { get; set; }
 
         [Required]
-        public Types Types { get; set;  }
+        public Types Types { get; set; }
 
         [Required]
         public Era Era { get; set; }
-
     }
 }
