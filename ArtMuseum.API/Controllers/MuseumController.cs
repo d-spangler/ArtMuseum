@@ -5,11 +5,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
-using ArtMuseum.Models;
 using AutoMapper.Internal;
 using System.Web.Http.Controllers;
-using ArtMuseum.Data;
 using ArtMuseum.Services;
+using ArtMuseum.Models;
 
 namespace ArtMuseum.API.Controllers
 {
