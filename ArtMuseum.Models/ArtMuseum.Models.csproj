@@ -60,13 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtworkCreate.cs" />
+    <Compile Include="ArtworkModels\ArtworkCreate.cs" />
+    <Compile Include="ArtworkModels\ArtworkDetail.cs" />
+    <Compile Include="ArtworkModels\ArtworkEdit.cs" />
+    <Compile Include="ArtworkModels\ArtworkListItem.cs" />
     <Compile Include="EmployeeEdit.cs" />
     <Compile Include="EmployeeListItem.cs" />
     <Compile Include="EmployeeDetails.cs" />
-    <Compile Include="EmployeeCreate.cs" />
-    <Compile Include="MuseumCreate.cs" />
-    <Compile Include="MuseumDetail.cs" />
+    <Compile Include="EmployeeModels\EmployeeCreate.cs" />
+    <Compile Include="MuseumModels\MuseumCreate.cs" />
+    <Compile Include="MuseumModels\MuseumDetail.cs" />
+    <Compile Include="MuseumModels\MuseumEdit.cs" />
+    <Compile Include="MuseumModels\MuseumListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

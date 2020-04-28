@@ -155,14 +155,14 @@ namespace ArtMuseum.Services
             }
         }
         //GET BY ERA
-        public ArtworkDetail GetArtworkByEra(Enum Eras)
+        public ArtworkDetail GetArtworkByEra(Enum eras)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Artworks
-                        .Single(e => e.Types.Equals(Eras));
+                        .Single(e => e.Types.Equals(eras));
                 return
                         new ArtworkDetail
                         {
