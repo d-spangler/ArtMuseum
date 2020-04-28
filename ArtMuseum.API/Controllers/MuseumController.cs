@@ -1,5 +1,4 @@
-﻿using ArtMuseum.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,6 +9,7 @@ using ArtMuseum.Models;
 using AutoMapper.Internal;
 using System.Web.Http.Controllers;
 using ArtMuseum.Data;
+using ArtMuseum.Services;
 
 namespace ArtMuseum.API.Controllers
 {

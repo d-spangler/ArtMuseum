@@ -42,13 +42,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtworkCreate.cs" />
-    <Compile Include="EmployeeCreate.cs" />
-    <Compile Include="MuseumCreate.cs" />
-    <Compile Include="MuseumDetail.cs" />
-    <Compile Include="MuseumEdit.cs" />
-    <Compile Include="MuseumListItem.cs" />
+    <Compile Include="ArtworkModels\ArtworkCreate.cs" />
+    <Compile Include="ArtworkModels\ArtworkDetail.cs" />
+    <Compile Include="ArtworkModels\ArtworkEdit.cs" />
+    <Compile Include="ArtworkModels\ArtworkListItem.cs" />
+    <Compile Include="EmployeeModels\EmployeeDetails.cs" />
+    <Compile Include="EmployeeModels\EmployeeEdit.cs" />
+    <Compile Include="EmployeeModels\EmployeeListItem.cs" />
+    <Compile Include="EmployeeModels\EmployeeCreate.cs" />
+    <Compile Include="MuseumModels\MuseumCreate.cs" />
+    <Compile Include="MuseumModels\MuseumDetail.cs" />
+    <Compile Include="MuseumModels\MuseumEdit.cs" />
+    <Compile Include="MuseumModels\MuseumListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="obj\Debug\ArtMuseum.Models.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ArtMuseum.Models.dll" />
+    <Content Include="bin\Debug\ArtMuseum.Models.pdb" />
+    <Content Include="obj\Debug\ArtMuseum.Models.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ArtMuseum.Models.dll" />
+    <Content Include="obj\Debug\ArtMuseum.Models.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArtMuseum.Data\ArtMuseum.Data.csproj">
+      <Project>{5E84BF72-924D-40C0-AC1F-55557B22EE4A}</Project>
+      <Name>ArtMuseum.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
