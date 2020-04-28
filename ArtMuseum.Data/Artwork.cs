@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,9 @@ namespace ArtMuseum.Data
 
         [Required]
         public string LocationOfArtwork { get; set; }
+
+        [ForeignKey(nameof(LocationOfArtwork))]
+        public virtual Museum Museum { get; set; }
 
         [Required]
         public bool Availability { get; set; }
