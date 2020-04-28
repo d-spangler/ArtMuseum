@@ -82,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="obj\Debug\ArtMuseum.Services.csproj.CopyComplete" />
+    <None Include="obj\Debug\ArtMuseum.Services.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +96,17 @@
       <Project>{7ACCB981-0614-48EB-BB35-AEBAA11EAD9C}</Project>
       <Name>ArtMuseum.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ArtMuseum.Services.dll" />
+    <Content Include="bin\Debug\ArtMuseum.Services.pdb" />
+    <Content Include="obj\Debug\ArtMuseum.Services.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ArtMuseum.Services.dll" />
+    <Content Include="obj\Debug\ArtMuseum.Services.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
