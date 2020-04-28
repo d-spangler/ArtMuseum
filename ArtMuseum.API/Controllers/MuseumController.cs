@@ -94,6 +94,5 @@ namespace ArtMuseum.API.Controllers
 
             return Ok();
         }
-
     }
 }
