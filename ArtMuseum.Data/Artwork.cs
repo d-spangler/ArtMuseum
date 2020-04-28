@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ArtMuseum.Data
 {
-    public enum Type { FrescoPainting = 1, Painting, Sculpture }
+    public enum Types { FrescoPainting = 1, Painting, Sculpture }
+   
     public enum Era { Renaissance = 1, Realism, Hellenistic, Impressionism, Romantic, Baroque }
 
     public class Artwork
@@ -27,6 +29,9 @@ namespace ArtMuseum.Data
         [Required]
         public string LocationOfArtwork { get; set; }
 
+        [ForeignKey(nameof(LocationOfArtwork))]
+        public virtual Museum Museum { get; set; }
+
         [Required]
         public bool Availability { get; set; }
 
@@ -34,7 +39,7 @@ namespace ArtMuseum.Data
         public string Medium { get; set; }
 
         [Required]
-        public Type Type { get; set; }
+        public Types Types { get; set;  }
 
         [Required]
         public Era Era { get; set; }

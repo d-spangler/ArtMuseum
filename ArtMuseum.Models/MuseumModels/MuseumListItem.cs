@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ArtMuseum.Models
 {
-    public class MuseumCreate
+    public class MuseumListItem
     {
+        public int MuseumId { get; set; }
+
+        public string MuseumName { get; set; }
+
     }
 }
