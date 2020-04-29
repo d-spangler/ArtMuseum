@@ -1,5 +1,4 @@
-﻿
-using ArtMuseum.Data;
+﻿using ArtMuseum.Data;
 using ArtMuseum.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +10,13 @@ namespace ArtMuseum.Services
 {
     public class EmployeeService
     {
+        private readonly Guid _userId;
+
+        public EmployeeService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         //POST
         public bool NewEmployee(EmployeeCreate model)
         {
@@ -18,7 +24,7 @@ namespace ArtMuseum.Services
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                Location = model.Location,
+                MuseumId = model.MuseumId,
                 Position = model.Position,
                 Id = model.Id
             };
@@ -36,7 +42,7 @@ namespace ArtMuseum.Services
             using (var db = new ApplicationDbContext())
             {
                 var query =
-                db.Employees.Where(e => e.Location == museumId).Select(e => new EmployeeListItem
+                db.Employees.Where(e => e.MuseumId == museumId).Select(e => new EmployeeListItem
                 {
                     Id = e.Id,
                     FirstName = e.FirstName,
@@ -59,7 +65,7 @@ namespace ArtMuseum.Services
                     Id = employee.Id,
                     FirstName = employee.FirstName,
                     LastName = employee.LastName,
-                    Location = employee.Location,
+                    MuseumId = employee.MuseumId,
                     Position = employee.Position,
                 };
             }
@@ -71,11 +77,11 @@ namespace ArtMuseum.Services
             using (var db = new ApplicationDbContext())
             {
                 var employee =
-                db.Employees.Single(e => e.DbId == model.DbId);
+                db.Employees.Single(e => e.Id == model.Id && e.DbId == _userId);
                 employee.Id = model.Id;
                 employee.FirstName = model.FirstName;
                 employee.LastName = model.LastName;
-                employee.Location = model.Location;
+                employee.MuseumId = model.MuseumId;
                 employee.Position = model.Position;
 
                 return db.SaveChanges() == 1;

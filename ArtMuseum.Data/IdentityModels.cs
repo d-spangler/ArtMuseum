@@ -36,7 +36,7 @@ namespace ArtMuseum.Data
         public DbSet<Museum> Museums { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Artwork> Artworks { get; set; }
-        public DbSet<Transfer> Transfers { get; set; }
+        //public DbSet<Transfer> Transfers { get; set; }
 
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)

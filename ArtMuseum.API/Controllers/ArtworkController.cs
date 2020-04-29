@@ -1,6 +1,7 @@
 ﻿using ArtMuseum.Data;
 using ArtMuseum.Models;
 using ArtMuseum.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,82 +14,98 @@ namespace ArtMuseum.API.Controllers
     [RoutePrefix("API/values")]
     public class ArtworkController : ApiController
     {
+        private ArtworkService CreateArtworkService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var artworkService = new ArtworkService(userId);
+            return artworkService;
+        }
+
         //POST
+        [HttpPost]
         public IHttpActionResult Post(ArtworkCreate model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            var service = new ArtworkService();
+            var service = CreateArtworkService();
             if (!service.CreateArtwork(model)) return InternalServerError();
             return Ok();
         }
 
         //GET ARTWORK BY ID
+        [HttpGet]
         [Route("id")]
         public IHttpActionResult Get(int id)
         {
-            var service = new ArtworkService();
-            var artwork = service.GetArtworkById(id);
+            ArtworkService artworkService = CreateArtworkService();
+            var artwork = artworkService.GetArtworkById(id);
             return Ok(artwork);
         }
 
         //GET BY NAME 
+        [HttpGet]
         [Route("name")]
         public IHttpActionResult GetByName(string name)
         {
-            var service = new ArtworkService();
-            var artwork = service.GetArtworkByName(name);
+            ArtworkService artworkService = CreateArtworkService();
+            var artwork = artworkService.GetArtworkByName(name);
             return Ok(artwork);
         }
 
         //GET BY ARTIST
+        [HttpGet]
         [Route("artist")]
         public IHttpActionResult GetByArtist(string artists)
         {
-            var service = new ArtworkService();
-            var artwork = service.GetArtworkByArtist(artists);
+            ArtworkService artworkService = CreateArtworkService();
+            var artwork = artworkService.GetArtworkByArtist(artists);
             return Ok(artwork);
         }
 
         //GET BY MEDUIM
+        [HttpGet]
         [Route("medium")]
         public IHttpActionResult GetByMedium(string mediums)
         {
-            var service = new ArtworkService();
-            var artwork = service.GetArtworkByMedium(mediums);
+            ArtworkService artworkService = CreateArtworkService();
+            var artwork = artworkService.GetArtworkByMedium(mediums);
             return Ok(artwork);
         }
 
         //GET BY TYPE
+        [HttpGet]
         [Route("types")]
         public IHttpActionResult GetByTypes(Enum types)
         {
-            var service = new ArtworkService();
-            var artwork = service.GetArtworkByTypes(types);
+            ArtworkService artworkService = CreateArtworkService();
+            var artwork = artworkService.GetArtworkByTypes(types);
             return Ok(artwork);
         }
 
         //GET BY ERA
+        [HttpGet]
         [Route("era")]
         public IHttpActionResult GetByEra(Enum era)
         {
-            var service = new ArtworkService();
-            var artwork = service.GetArtworkByEra(era);
+            ArtworkService artworkService = CreateArtworkService();
+            var artwork = artworkService.GetArtworkByEra(era);
             return Ok(artwork);
         }
 
         //PUT
+        [HttpPut]
         public IHttpActionResult Put(ArtworkEdit model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            var service = new ArtworkService();
+            var service = CreateArtworkService();
             if (!service.UpdateArtwork(model)) return InternalServerError();
             return Ok();
         }
 
         //DELETE
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            var service = new ArtworkService();
+            var service = CreateArtworkService();
             if (!service.DeleteArtwork(id)) return InternalServerError();
             return Ok();
         }

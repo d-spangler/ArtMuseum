@@ -5,11 +5,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
-using ArtMuseum.Models;
 using AutoMapper.Internal;
 using System.Web.Http.Controllers;
-using ArtMuseum.Data;
 using ArtMuseum.Services;
+using ArtMuseum.Models;
 
 namespace ArtMuseum.API.Controllers
 {
@@ -32,6 +31,7 @@ namespace ArtMuseum.API.Controllers
         }
 
         [HttpGet]//Get by id
+        [Route("id")]
         public IHttpActionResult Get([FromUri]int id)
         {
             MuseumServices museumServices = CreateMuseumService();
@@ -40,6 +40,7 @@ namespace ArtMuseum.API.Controllers
         }
 
         [HttpGet]//Get by name
+        [Route("name")]
         public IHttpActionResult Get([FromUri] string name)
         {
             MuseumServices museumServices = CreateMuseumService();

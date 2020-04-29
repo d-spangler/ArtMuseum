@@ -17,7 +17,7 @@ namespace ArtMuseum.Models
 
         public string Description { get; set; }
 
-        public string LocationOfArtwork { get; set; }
+        public string MuseumName { get; set; }
 
         public bool Availability { get; set; }
 
