@@ -10,17 +10,25 @@ namespace ArtMuseum.Services
 {
     public class ArtworkService
     {
+
+        private readonly Guid _userId;
+
+        public ArtworkService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         //CREATE
         public bool CreateArtwork(ArtworkCreate model)
         {
-            Artwork newArtwork =
+            var newArtwork =
                 new Artwork()
                 {
                     NameOfPiece = model.NameOfPiece,
                     Artist = model.Artist,
                     Description = model.Description,
-                    LocationOfArtwork = model.LocationOfArtwork,
-                    Availability = model.Availability,
+                    MuseumName = model.MuseumName,
+                    //Availability = model.Availability,
                     Medium = model.Medium,
                     Types = model.Types,
                     Era = model.Era,
@@ -88,7 +96,7 @@ namespace ArtMuseum.Services
                         {
                             NameOfPiece = entity.NameOfPiece,
                             Artist = entity.Artist,
-                            LocationOfArtwork = entity.LocationOfArtwork,
+                            MuseumName = entity.MuseumName,
                             Medium = entity.Medium,
                             Era = entity.Era,
                             Types = entity.Types,
@@ -101,7 +109,7 @@ namespace ArtMuseum.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Artworks
                         .Where(e => e.Artist == artists).Select(e=>
@@ -113,62 +121,65 @@ namespace ArtMuseum.Services
                             NameOfPiece = e.NameOfPiece,
                             ArtworkId =e.ArtworkId,
                         });
-                return entity.ToArray();
+                return query.ToArray();
             }
         }
 
         
 
         //GET BY MEDIUM
-        public ArtworkDetail GetArtworkByMedium(string mediums)
+        public IEnumerable<ArtworkDetail> GetArtworkByMedium(string mediums)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Artworks
-                        .Single(e => e.Medium == mediums);
-                return
+                        .Where(e => e.Medium == mediums).Select(e=>
+               
                         new ArtworkDetail
                         {
-                            Medium = entity.Medium,
-                            NameOfPiece = entity.NameOfPiece,
-                        };
+                            Medium = e.Medium,
+                            NameOfPiece = e.NameOfPiece,
+                        });
+                return query.ToArray();
             }
         }
 
         //GET BY TYPE
-        public ArtworkDetail GetArtworkByTypes(Enum type)
+        public IEnumerable<ArtworkDetail> GetArtworkByTypes(Enum type)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Artworks
-                        .Single(e => e.Types.Equals(type));
-                return
+                        .Where(e => e.Types.Equals(type)).Select(e =>
+
                         new ArtworkDetail
                         {
-                            Types = entity.Types,
-                            NameOfPiece = entity.NameOfPiece,
-                        };
+                            Types = e.Types,
+                            NameOfPiece = e.NameOfPiece,
+                        });
+                return query.ToArray();
             }
         }
         //GET BY ERA
-        public ArtworkDetail GetArtworkByEra(Enum eras)
+        public IEnumerable<ArtworkDetail> GetArtworkByEra(Enum eras)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Artworks
-                        .Single(e => e.Types.Equals(eras));
-                return
+                        .Where(e => e.Types.Equals(eras)).Select(e=>
+                
                         new ArtworkDetail
                         {
-                            Era = entity.Era,
-                            NameOfPiece = entity.NameOfPiece,
-                        };
+                            Era = e.Era,
+                            NameOfPiece = e.NameOfPiece,
+                        });
+                return query.ToArray();
             }
         }
         //UPDATE
@@ -183,7 +194,7 @@ namespace ArtMuseum.Services
 
                 entity.ArtworkId = model.ArtworkId;
                 entity.NameOfPiece = model.NameOfPiece;
-                entity.LocationOfArtwork = model.LocationOfArtwork;
+                entity.MuseumName = model.MuseumName;
                 entity.Medium = model.Medium;
                 entity.Types = model.Types;
                 entity.Era = model.Era;

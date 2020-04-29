@@ -31,6 +31,7 @@ namespace ArtMuseum.API.Controllers
         }
 
         [HttpGet]//Get by id
+        [Route("id")]
         public IHttpActionResult Get([FromUri]int id)
         {
             MuseumServices museumServices = CreateMuseumService();
@@ -39,6 +40,7 @@ namespace ArtMuseum.API.Controllers
         }
 
         [HttpGet]//Get by name
+        [Route("name")]
         public IHttpActionResult Get([FromUri] string name)
         {
             MuseumServices museumServices = CreateMuseumService();
