@@ -19,9 +19,9 @@ namespace ArtMuseum.Models
 
         [Required] public string Position { get; set; }
 
-        [Required] public int Location { get; set; }
+        [Required] public int MuseumId { get; set; }
 
-        [ForeignKey(nameof(Location))] public virtual Museum Museum { get; set; }
+        [ForeignKey(nameof(MuseumId))] public virtual Museum Museum { get; set; }
 
         //public int ClearanceLevel {get; set;} -----Stretch Goal-----
     }

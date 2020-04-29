@@ -43,7 +43,7 @@ namespace ArtMuseum.Services
         {
             using (var db = new ApplicationDbContext())
             {
-                var queary =
+                var query =
                     db
                         .Museums
                         .Select(
@@ -54,7 +54,7 @@ namespace ArtMuseum.Services
                                     MuseumName = e.MuseumName,
 
                                 });
-                return queary.ToArray();
+                return query.ToArray();
             }
         }
 

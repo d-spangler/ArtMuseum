@@ -18,7 +18,7 @@ namespace ArtMuseum.Models
 
         public string Position { get; set; }
 
-        public int Location { get; set; }
+        public int MuseumId { get; set; }
 
         
 

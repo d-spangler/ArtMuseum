@@ -15,6 +15,9 @@ namespace ArtMuseum.Data
         public int MuseumId { get; set; }
 
         [Required]
+        public Guid DbId { get; set; }
+
+        [Required]
         public string MuseumName { get; set; }
 
         [Required]
@@ -25,6 +28,14 @@ namespace ArtMuseum.Data
 
         public int CountryCode { get; set; }
 
-        public ICollection<Artwork> CollectedWorks { get; set; }
+
+
+        //[ForeignKey(nameof(Artwork))]
+        //public virtual Artwork Artwork { get; set; }
+
+        //[ForeignKey(nameof(MuseumId))]
+        //public virtual Employee Employee { get; set; }
+
+        //public ICollection<Artwork> CollectedWorks { get; set; }
     }
 }

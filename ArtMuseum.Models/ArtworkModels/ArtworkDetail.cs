@@ -19,7 +19,7 @@ namespace ArtMuseum.Models
         public string Artist { get; set; }
 
         [Display(Name = "Location of Piece")]
-        public string LocationOfArtwork { get; set; }
+        public string MuseumName { get; set; }
 
         [Display(Name = "Medium")]
         public string Medium { get; set; }
