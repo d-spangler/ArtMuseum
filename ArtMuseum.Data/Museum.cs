@@ -15,9 +15,6 @@ namespace ArtMuseum.Data
         public int MuseumId { get; set; }
 
         [Required]
-        public Guid DbId { get; set; }
-
-        [Required]
         public string MuseumName { get; set; }
 
         [Required]
