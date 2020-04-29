@@ -18,9 +18,6 @@ namespace ArtMuseum.Data
         public int ArtworkId { get; set; }
 
         [Required]
-        public Guid DbId { get; set; }
-
-        [Required]
         public string NameOfPiece { get; set; }
 
         [Required]
@@ -30,9 +27,9 @@ namespace ArtMuseum.Data
         public string Description { get; set; }
 
         [Required]
-        public string MuseumName { get; set; }
+        public int MuseumId { get; set; }
 
-        [ForeignKey(nameof(MuseumName))]
+        [ForeignKey(nameof(MuseumId))]
         public virtual Museum Museum { get; set; }
 
         [Required]

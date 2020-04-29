@@ -77,7 +77,7 @@ namespace ArtMuseum.Services
             using (var db = new ApplicationDbContext())
             {
                 var employee =
-                db.Employees.Single(e => e.Id == model.Id && e.DbId == _userId);
+                db.Employees.Single(e => e.Id == model.Id && e.OwnerId == _userId);
                 employee.Id = model.Id;
                 employee.FirstName = model.FirstName;
                 employee.LastName = model.LastName;

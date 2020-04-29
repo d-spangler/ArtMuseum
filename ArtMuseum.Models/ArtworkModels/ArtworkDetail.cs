@@ -18,8 +18,8 @@ namespace ArtMuseum.Models
         [Display(Name = "Name of Artist")]
         public string Artist { get; set; }
 
-        [Display(Name = "Location of Piece")]
-        public string MuseumName { get; set; }
+        [Display(Name = "Musuem ID")]
+        public int MuseumId { get; set; }
 
         [Display(Name = "Medium")]
         public string Medium { get; set; }

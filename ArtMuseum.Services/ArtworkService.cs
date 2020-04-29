@@ -27,7 +27,7 @@ namespace ArtMuseum.Services
                     NameOfPiece = model.NameOfPiece,
                     Artist = model.Artist,
                     Description = model.Description,
-                    MuseumName = model.MuseumName,
+                    MuseumId = model.MuseumId,
                     //Availability = model.Availability,
                     Medium = model.Medium,
                     Types = model.Types,
@@ -96,7 +96,7 @@ namespace ArtMuseum.Services
                         {
                             NameOfPiece = entity.NameOfPiece,
                             Artist = entity.Artist,
-                            MuseumName = entity.MuseumName,
+                            MuseumId = entity.MuseumId,
                             Medium = entity.Medium,
                             Era = entity.Era,
                             Types = entity.Types,
@@ -194,7 +194,7 @@ namespace ArtMuseum.Services
 
                 entity.ArtworkId = model.ArtworkId;
                 entity.NameOfPiece = model.NameOfPiece;
-                entity.MuseumName = model.MuseumName;
+                entity.MuseumId = model.MuseumId;
                 entity.Medium = model.Medium;
                 entity.Types = model.Types;
                 entity.Era = model.Era;
