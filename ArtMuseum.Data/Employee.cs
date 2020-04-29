@@ -12,7 +12,7 @@ namespace ArtMuseum.Data
     {
         [Key] public string Id { get; set; }
 
-        [Required] public Guid DbId { get; set; }
+        [Required] public Guid OwnerId { get; set; }
 
         [Required] public string FirstName { get; set; }
 

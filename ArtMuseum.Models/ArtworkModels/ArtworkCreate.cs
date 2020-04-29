@@ -21,7 +21,7 @@ namespace ArtMuseum.Models
         public string Description { get; set; }
 
         [Required]
-        public string MuseumName { get; set; }
+        public int MuseumId { get; set; }
 
         //public bool Availability { get; set; }
 
