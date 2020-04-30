@@ -158,14 +158,15 @@ namespace ArtMuseum.Services
         }
 
         //GET BY TYPE
-        public IEnumerable<ArtworkDetail> GetArtworkByTypes(Enum type)
+        public IEnumerable<ArtworkDetail> GetArtworkByTypes(string typeString)
         {
+            Enum.TryParse(typeString, out ArtMuseum.Data.Types type);
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Artworks
-                        .Where(e => e.Types.Equals(type)).Select(e =>
+                        .Where(e => e.Types == type).Select(e =>
 
                         new ArtworkDetail
                         {
