@@ -9,7 +9,6 @@ namespace ArtMuseum.Models
 {
     public class EmployeeEdit
     {
-        public int DbId { get; set; }
         public string Id { get; set; }
 
         public string FirstName { get; set; }
