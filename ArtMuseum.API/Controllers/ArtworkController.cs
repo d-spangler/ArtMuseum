@@ -83,7 +83,7 @@ namespace ArtMuseum.API.Controllers
         //GET BY TYPE
         [HttpGet]
         [Route("types")]
-        public IHttpActionResult GetByTypes(Enum types)
+        public IHttpActionResult GetByTypes(string types)
         {
             ArtworkService artworkService = CreateArtworkService();
             var artwork = artworkService.GetArtworkByTypes(types);
