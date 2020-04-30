@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace ArtMuseum.API.Controllers
 {
+    [Authorize]
     public class EmployeeController : ApiController
     {
         private EmployeeService CreateEmployeeService()
