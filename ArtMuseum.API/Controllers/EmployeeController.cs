@@ -13,6 +13,7 @@ namespace ArtMuseum.API.Controllers
 {
     public class EmployeeController : ApiController
     {
+        [Authorize]
         private EmployeeService CreateEmployeeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -30,7 +31,7 @@ namespace ArtMuseum.API.Controllers
             return Ok();
         }
 
-        //GET ALL--BY MUSEUM
+        //GET--BY MUSEUM
         [HttpGet]
         [Route("museum")]
         public IHttpActionResult Get(int museum)
@@ -40,13 +41,22 @@ namespace ArtMuseum.API.Controllers
             return Ok(employees);
         }
 
+        //GET ALL
+        
+        public IHttpActionResult Get()
+        {
+            var service = CreateEmployeeService();
+            var employees = service.GetAllEmployees();
+            return Ok(employees);
+        }
+
         //GET ONE--BY ID
         [HttpGet]
-        [Route("id")]
-        public IHttpActionResult Get(string id)
+        [Route("emp-id")]
+        public IHttpActionResult Get(string emp_id)
         {
             EmployeeService employeeService = CreateEmployeeService();
-            var employee = employeeService.GetEmployeeById(id);
+            var employee = employeeService.GetEmployeeById(emp_id);
             return Ok(employee);
         }
 
@@ -61,11 +71,11 @@ namespace ArtMuseum.API.Controllers
         }
 
         //DELETE
-        [HttpPut]
-        public IHttpActionResult Delete(string id)
+        
+        public IHttpActionResult Delete(string emp_id)
         {
             var service = CreateEmployeeService();
-            if (!service.DeleteEmployee(id)) return InternalServerError();
+            if (!service.DeleteEmployee(emp_id)) return InternalServerError();
             return Ok();
         }
 

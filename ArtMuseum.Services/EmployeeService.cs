@@ -26,7 +26,8 @@ namespace ArtMuseum.Services
                 LastName = model.LastName,
                 MuseumId = model.MuseumId,
                 Position = model.Position,
-                Id = model.Id
+                Id = model.Id,
+                OwnerId = _userId
             };
 
             using (var db = new ApplicationDbContext())
@@ -36,7 +37,7 @@ namespace ArtMuseum.Services
             }
         }
 
-        //GET--ALL
+        //GET--BY MUSEUM
         public IEnumerable<EmployeeListItem> GetEmployeesAtMuseum(int museumId)
         {
             using (var db = new ApplicationDbContext())
@@ -48,10 +49,30 @@ namespace ArtMuseum.Services
                     FirstName = e.FirstName,
                     LastName = e.LastName,
                     Position = e.Position,
+                    MuseumId = e.MuseumId
                 });
                 return query.ToArray();
             }
         }
+
+        //GET--ALL
+        public IEnumerable<EmployeeListItem> GetAllEmployees()
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var query =
+                db.Employees.Select(e => new EmployeeListItem
+                {
+                    Id = e.Id,
+                    FirstName = e.FirstName,
+                    LastName = e.LastName,
+                    Position = e.Position,
+                    MuseumId = e.MuseumId
+                });
+                return query.ToArray();
+            }
+        }
+
 
         //GET--SPECIFIC
         public EmployeeDetails GetEmployeeById(string id)
@@ -77,7 +98,7 @@ namespace ArtMuseum.Services
             using (var db = new ApplicationDbContext())
             {
                 var employee =
-                db.Employees.Single(e => e.Id == model.Id && e.OwnerId == _userId);
+                db.Employees.Single(e => e.Id == model.Id);
                 employee.Id = model.Id;
                 employee.FirstName = model.FirstName;
                 employee.LastName = model.LastName;
