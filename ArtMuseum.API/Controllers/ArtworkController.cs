@@ -31,6 +31,15 @@ namespace ArtMuseum.API.Controllers
             return Ok();
         }
 
+        //GET ALL
+        [HttpGet]
+        public IHttpActionResult GetAll()
+        {
+            ArtworkService artworkService = CreateArtworkService();
+            var artwork = artworkService.GetArtwork();
+            return Ok(artwork);
+        }
+
         //GET ARTWORK BY ID
         [HttpGet]
         [Route("id")]
