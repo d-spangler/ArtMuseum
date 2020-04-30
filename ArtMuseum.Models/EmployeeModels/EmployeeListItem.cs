@@ -17,6 +17,8 @@ namespace ArtMuseum.Models
 
         public string Position { get; set; }
 
+        public int MuseumId { get; set; }
+
         //public int ClearanceLevel {get; set;} -----Stretch Goal-----
     }
 }
