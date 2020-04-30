@@ -32,7 +32,7 @@ namespace ArtMuseum.API.Controllers
 
         [HttpGet]//Get by id
         [Route("id")]
-        public IHttpActionResult Get([FromUri]int id)
+        public IHttpActionResult Get(int id)
         {
             MuseumServices museumServices = CreateMuseumService();
             var museum = museumServices.GetMuseumById(id);
@@ -41,7 +41,7 @@ namespace ArtMuseum.API.Controllers
 
         [HttpGet]//Get by name
         [Route("name")]
-        public IHttpActionResult Get([FromUri] string name)
+        public IHttpActionResult Get(string name)
         {
             MuseumServices museumServices = CreateMuseumService();
             var museum = museumServices.GetMuseumByName(name);
