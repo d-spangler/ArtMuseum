@@ -20,6 +20,9 @@ namespace ArtMuseum.Models
         [Display(Name = "Country")]
         public string LocationCountry { get; set; }
 
+        [Display(Name ="Country Code")]
+        public string CountryCode { get; set; }
+
 
     }
 }

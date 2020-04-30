@@ -27,9 +27,10 @@ namespace ArtMuseum.Services
                     MuseumName = model.MuseumName,
                     LocationCity = model.LocationCity,
                     LocationCountry = model.LocationCountry,
+                    CountryCode = Convert.ToInt32(model.CountryCode)
                 };
 
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 ctx.Museums.Add(newMuseum);
                 return ctx.SaveChanges() == 1;
@@ -119,6 +120,7 @@ namespace ArtMuseum.Services
                 entity.MuseumName = model.MuseumName;
                 entity.LocationCity = model.LocationCity;
                 entity.LocationCountry = model.LocationCountry;
+                entity.CountryCode = Convert.ToInt32(model.CountryCode);
 
                 return db.SaveChanges() == 1;
             }
