@@ -104,6 +104,10 @@
     <Compile Include="Migrations\202004301551595_SecondMigration.designer.cs">
       <DependentUpon>202004301551595_SecondMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004301946253_FourthMigration.cs" />
+    <Compile Include="Migrations\202004301946253_FourthMigration.designer.cs">
+      <DependentUpon>202004301946253_FourthMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Museum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004301551595_SecondMigration.resx">
       <DependentUpon>202004301551595_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004301946253_FourthMigration.resx">
+      <DependentUpon>202004301946253_FourthMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
