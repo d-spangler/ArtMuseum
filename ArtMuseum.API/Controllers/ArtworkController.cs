@@ -93,7 +93,7 @@ namespace ArtMuseum.API.Controllers
         //GET BY ERA
         [HttpGet]
         [Route("era")]
-        public IHttpActionResult GetByEra(Enum era)
+        public IHttpActionResult GetByEra(string era)
         {
             ArtworkService artworkService = CreateArtworkService();
             var artwork = artworkService.GetArtworkByEra(era);

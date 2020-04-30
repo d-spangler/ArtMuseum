@@ -1,10 +1,12 @@
 ﻿using ArtMuseum.Data;
 using ArtMuseum.Models;
+using NodaTime.Calendars;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Era = ArtMuseum.Data.Era;
 
 namespace ArtMuseum.Services
 {
@@ -179,14 +181,15 @@ namespace ArtMuseum.Services
             }
         }
         //GET BY ERA
-        public IEnumerable<ArtworkDetail> GetArtworkByEra(Enum eras)
+        public IEnumerable<ArtworkDetail> GetArtworkByEra(string eras)
         {
+            Enum.TryParse(eras, out Era era);
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Artworks
-                        .Where(e => e.Types.Equals(eras)).Select(e=>
+                        .Where(e => e.Era == era).Select(e=>
                 
                         new ArtworkDetail
                         {
