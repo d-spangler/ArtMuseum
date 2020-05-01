@@ -7,13 +7,13 @@ namespace ArtMuseum.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class FourthMigration : IMigrationMetadata
+    public sealed partial class TestMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FourthMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TestMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004301946253_FourthMigration"; }
+            get { return "202005011946583_TestMigration"; }
         }
         
         string IMigrationMetadata.Source

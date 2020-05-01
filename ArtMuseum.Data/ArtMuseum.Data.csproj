@@ -92,25 +92,13 @@
     <Compile Include="Artwork.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202004291801574_InitialCreate.cs" />
-    <Compile Include="Migrations\202004291801574_InitialCreate.designer.cs">
-      <DependentUpon>202004291801574_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202005011926497_InitialCreate.cs" />
+    <Compile Include="Migrations\202005011926497_InitialCreate.designer.cs">
+      <DependentUpon>202005011926497_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004291831363_InitialMigration.cs" />
-    <Compile Include="Migrations\202004291831363_InitialMigration.designer.cs">
-      <DependentUpon>202004291831363_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004301551595_SecondMigration.cs" />
-    <Compile Include="Migrations\202004301551595_SecondMigration.designer.cs">
-      <DependentUpon>202004301551595_SecondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004301946253_FourthMigration.cs" />
-    <Compile Include="Migrations\202004301946253_FourthMigration.designer.cs">
-      <DependentUpon>202004301946253_FourthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005011511197_FifthMigrationContentSeed.cs" />
-    <Compile Include="Migrations\202005011511197_FifthMigrationContentSeed.designer.cs">
-      <DependentUpon>202005011511197_FifthMigrationContentSeed.cs</DependentUpon>
+    <Compile Include="Migrations\202005011946583_TestMigration.cs" />
+    <Compile Include="Migrations\202005011946583_TestMigration.designer.cs">
+      <DependentUpon>202005011946583_TestMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Museum.cs" />
@@ -122,20 +110,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004291801574_InitialCreate.resx">
-      <DependentUpon>202004291801574_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005011926497_InitialCreate.resx">
+      <DependentUpon>202005011926497_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291831363_InitialMigration.resx">
-      <DependentUpon>202004291831363_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004301551595_SecondMigration.resx">
-      <DependentUpon>202004301551595_SecondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004301946253_FourthMigration.resx">
-      <DependentUpon>202004301946253_FourthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005011511197_FifthMigrationContentSeed.resx">
-      <DependentUpon>202005011511197_FifthMigrationContentSeed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005011946583_TestMigration.resx">
+      <DependentUpon>202005011946583_TestMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
