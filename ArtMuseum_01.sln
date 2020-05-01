@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtMuseum.Models", "ArtMuse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtMuseum.Services", "ArtMuseum.Services\ArtMuseum.Services.csproj", "{E65FA161-1B4B-40F1-B413-F931EACAC526}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumUI", "MuseumUI\MuseumUI.csproj", "{5761F745-2FE3-4056-A6A0-390AB1510BE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E65FA161-1B4B-40F1-B413-F931EACAC526}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E65FA161-1B4B-40F1-B413-F931EACAC526}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E65FA161-1B4B-40F1-B413-F931EACAC526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5761F745-2FE3-4056-A6A0-390AB1510BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5761F745-2FE3-4056-A6A0-390AB1510BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5761F745-2FE3-4056-A6A0-390AB1510BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5761F745-2FE3-4056-A6A0-390AB1510BE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
