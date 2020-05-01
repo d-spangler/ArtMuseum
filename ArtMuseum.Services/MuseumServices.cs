@@ -27,7 +27,7 @@ namespace ArtMuseum.Services
                     MuseumName = model.MuseumName,
                     LocationCity = model.LocationCity,
                     LocationCountry = model.LocationCountry,
-                    CountryCode = Convert.ToInt32(model.CountryCode)
+                    CountryCode = model.CountryCode,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -51,10 +51,11 @@ namespace ArtMuseum.Services
                             e =>
                                 new MuseumListItem
                                 {
+                                    MuseumId = e.MuseumId,
                                     MuseumName = e.MuseumName,
                                     LocationCity = e.LocationCity,
                                     LocationCountry = e.LocationCountry,
-                                    CountryCode = Convert.ToString(e.CountryCode)
+                                    CountryCode = e.CountryCode
 
                                 });
                 return query.ToArray();
@@ -77,7 +78,7 @@ namespace ArtMuseum.Services
                             MuseumName = entity.MuseumName,
                             LocationCity = entity.LocationCity,
                             LocationCountry = entity.LocationCountry,
-                            CountryCode = Convert.ToString(entity.CountryCode)
+                            CountryCode = entity.CountryCode
                         };
             }
         }
@@ -101,7 +102,7 @@ namespace ArtMuseum.Services
                                 MuseumName = entity.MuseumName,
                                 LocationCity = entity.LocationCity,
                                 LocationCountry = entity.LocationCountry,
-                                CountryCode = Convert.ToString(entity.CountryCode)
+                                CountryCode = entity.CountryCode
                             };
                 }
                 return null;
@@ -128,7 +129,7 @@ namespace ArtMuseum.Services
                 entity.MuseumName = model.MuseumName;
                 entity.LocationCity = model.LocationCity;
                 entity.LocationCountry = model.LocationCountry;
-                entity.CountryCode = Convert.ToInt32(model.CountryCode);
+                entity.CountryCode = model.CountryCode;
 
                 return db.SaveChanges() == 1;
             }

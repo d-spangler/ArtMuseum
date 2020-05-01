@@ -205,6 +205,25 @@ namespace ArtMuseum.Services
                 return query.ToArray();
             }
         }
+
+        //GET--BY MUSEUM
+        public IEnumerable<ArtworkListItem> GetArtworksAtMuseum(int museumId)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var query =
+                db.Artworks.Where(e => e.MuseumId == museumId).Select(e => new ArtworkListItem
+                {
+                    ArtworkId = e.ArtworkId,
+                    NameOfPiece = e.NameOfPiece,
+                    Artist = e.Artist,
+                    Medium = e.Medium,
+                    Types = e.Types,
+                    Era = e.Era
+                });
+                return query.ToArray();
+            }
+        }
         //UPDATE
         public bool UpdateArtwork(ArtworkEdit model)
         {

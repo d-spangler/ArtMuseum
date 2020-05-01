@@ -100,6 +100,16 @@ namespace ArtMuseum.API.Controllers
             return Ok(artwork);
         }
 
+        //GET--BY MUSEUM
+        [HttpGet]
+        [Route("museum-collection")]
+        public IHttpActionResult GetCollection(int museum)
+        {
+            ArtworkService artworkService = CreateArtworkService();
+            var artworks = artworkService.GetArtworksAtMuseum(museum);
+            return Ok(artworks);
+        }
+
         //PUT
         [HttpPut]
         public IHttpActionResult Put(ArtworkEdit model)
