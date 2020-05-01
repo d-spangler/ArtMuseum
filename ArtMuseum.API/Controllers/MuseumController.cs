@@ -23,7 +23,7 @@ namespace ArtMuseum.API.Controllers
         }
 
         [HttpGet]//Get all museums
-        public IHttpActionResult Get()
+        public IHttpActionResult GetAll()
         {
             MuseumServices museumServices = CreateMuseumService();
             var museums = museumServices.GetMuseums();

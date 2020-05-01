@@ -60,6 +60,9 @@ namespace ArtMuseum.Services
                                     ArtworkId = e.ArtworkId,
                                     NameOfPiece = e.NameOfPiece,
                                     Artist = e.Artist,
+                                    Medium = e.Medium,
+                                    Types = e.Types,
+                                    Era = e.Era,
 
                                 });
                 return queary.ToArray();
@@ -96,6 +99,7 @@ namespace ArtMuseum.Services
                 return
                         new ArtworkDetail
                         {
+                            ArtworkId = entity.ArtworkId,
                             NameOfPiece = entity.NameOfPiece,
                             Artist = entity.Artist,
                             MuseumId = entity.MuseumId,
@@ -141,27 +145,38 @@ namespace ArtMuseum.Services
                
                         new ArtworkDetail
                         {
-                            Medium = e.Medium,
+                            ArtworkId = e.ArtworkId,
                             NameOfPiece = e.NameOfPiece,
+                            Artist = e.Artist,
+                            MuseumId = e.MuseumId,
+                            Medium = e.Medium,
+                            Era = e.Era,
+                            Types = e.Types,
                         });
                 return query.ToArray();
             }
         }
 
         //GET BY TYPE
-        public IEnumerable<ArtworkDetail> GetArtworkByTypes(Enum type)
+        public IEnumerable<ArtworkDetail> GetArtworkByTypes(string typeString)
         {
+            Enum.TryParse(typeString, out ArtMuseum.Data.Types type);
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Artworks
-                        .Where(e => e.Types.Equals(type)).Select(e =>
+                        .Where(e => e.Types == type).Select(e =>
 
                         new ArtworkDetail
                         {
-                            Types = e.Types,
+                            ArtworkId= e.ArtworkId,
                             NameOfPiece = e.NameOfPiece,
+                            Artist = e.Artist,
+                            MuseumId = e.MuseumId,
+                            Medium = e.Medium,
+                            Era = e.Era,
+                            Types = e.Types,
                         });
                 return query.ToArray();
             }
@@ -179,8 +194,13 @@ namespace ArtMuseum.Services
                 
                         new ArtworkDetail
                         {
-                            Era = e.Era,
+                            ArtworkId = e.ArtworkId,
                             NameOfPiece = e.NameOfPiece,
+                            Artist = e.Artist,
+                            MuseumId = e.MuseumId,
+                            Medium = e.Medium,
+                            Era = e.Era,
+                            Types = e.Types,
                         });
                 return query.ToArray();
             }

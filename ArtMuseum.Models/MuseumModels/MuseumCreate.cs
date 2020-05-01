@@ -18,5 +18,7 @@ namespace ArtMuseum.Models
         [Required]
         public string LocationCountry { get; set; }
 
+        [Required]
+        public string CountryCode { get; set; }
     }
 }
