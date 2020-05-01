@@ -51,8 +51,10 @@ namespace ArtMuseum.Services
                             e =>
                                 new MuseumListItem
                                 {
-                                    MuseumId = e.MuseumId,
                                     MuseumName = e.MuseumName,
+                                    LocationCity = e.LocationCity,
+                                    LocationCountry = e.LocationCountry,
+                                    CountryCode = Convert.ToString(e.CountryCode)
 
                                 });
                 return query.ToArray();
@@ -73,6 +75,9 @@ namespace ArtMuseum.Services
                         {
                             MuseumId = entity.MuseumId,
                             MuseumName = entity.MuseumName,
+                            LocationCity = entity.LocationCity,
+                            LocationCountry = entity.LocationCountry,
+                            CountryCode = Convert.ToString(entity.CountryCode)
                         };
             }
         }
@@ -94,6 +99,9 @@ namespace ArtMuseum.Services
                             {
                                 MuseumId = entity.MuseumId,
                                 MuseumName = entity.MuseumName,
+                                LocationCity = entity.LocationCity,
+                                LocationCountry = entity.LocationCountry,
+                                CountryCode = Convert.ToString(entity.CountryCode)
                             };
                 }
                 return null;
