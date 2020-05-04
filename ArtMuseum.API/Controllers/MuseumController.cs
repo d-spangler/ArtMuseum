@@ -9,12 +9,15 @@ using AutoMapper.Internal;
 using System.Web.Http.Controllers;
 using ArtMuseum.Services;
 using ArtMuseum.Models;
+using ArtMuseum.Data;
 
 namespace ArtMuseum.API.Controllers
 {
     [Authorize]
     public class MuseumController : ApiController
     {
+        private readonly ApplicationDbContext _collection = new ApplicationDbContext();
+
         private MuseumServices CreateMuseumService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -48,15 +51,25 @@ namespace ArtMuseum.API.Controllers
             return Ok(museum);
         }
 
-        /*[HttpGet]//Get collection via museum id
-        [Route("getcollection")]
-        public IHttpActionResult Get([FromUri]int id)
+        //GET Collection
+        [HttpGet]
+        [Route("museum-collection")]
+        public IHttpActionResult GetCollection(int museum)
         {
             MuseumServices museumServices = CreateMuseumService();
-            var museum = museumServices.GetMuseumById(id);
-            return ICollection<CollectedWorks>
-        }*/
+            var artworks = museumServices.GetArtworksAtMuseum(museum);
+            return Ok(artworks);
+        }
 
+        //Get Employee Roster
+        [HttpGet]
+        [Route("museum-roster")]
+        public IHttpActionResult GetRoster(int museum)
+        {
+            MuseumServices museumServices = CreateMuseumService();
+            var employees = museumServices.GetEmployeesAtMuseum(museum);
+            return Ok(employees);
+        }
 
         [HttpPost]//Create
         public IHttpActionResult Post(MuseumCreate museum)

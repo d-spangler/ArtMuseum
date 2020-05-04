@@ -109,13 +109,43 @@ namespace ArtMuseum.Services
             }
         }
 
-        //CollectedWorksById
-        /*public ICollection<Artwork> GetArtworksById(int id)
+        //GET--Collection
+        public IEnumerable<ArtworkListItem> GetArtworksAtMuseum(int museumId)
         {
-            using (var )
-        }*/
-        
-        //Update
+            using (var db = new ApplicationDbContext())
+            {
+                var query =
+                db.Artworks.Where(e => e.MuseumId == museumId).Select(e => new ArtworkListItem
+                {
+                    ArtworkId = e.ArtworkId,
+                    NameOfPiece = e.NameOfPiece,
+                    Artist = e.Artist,
+                    MuseumId = e.MuseumId,
+                    Medium = e.Medium,
+                    Era = e.Era,
+                    Types = e.Types,
+                });
+                return query.ToArray();
+            }
+        }
+
+        //GET--Employees
+        public IEnumerable<EmployeeListItem> GetEmployeesAtMuseum(int museumId)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var query =
+                db.Employees.Where(e => e.MuseumId == museumId).Select(e => new EmployeeListItem
+                {
+                    Id = e.Id,
+                    FirstName = e.FirstName,
+                    LastName = e.LastName,
+                    Position = e.Position,
+                    MuseumId = e.MuseumId,
+                });
+                return query.ToArray();
+            }
+        }
         public bool UpdateMuseum(MuseumEdit model)
         {
             using(var db = new ApplicationDbContext())

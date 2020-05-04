@@ -60,6 +60,7 @@ namespace ArtMuseum.Services
                                     ArtworkId = e.ArtworkId,
                                     NameOfPiece = e.NameOfPiece,
                                     Artist = e.Artist,
+                                    MuseumId = e.MuseumId,
                                     Medium = e.Medium,
                                     Types = e.Types,
                                     Era = e.Era,
@@ -83,6 +84,11 @@ namespace ArtMuseum.Services
                         {
                             ArtworkId = entity.ArtworkId,
                             NameOfPiece = entity.NameOfPiece,
+                            Artist = entity.Artist,
+                            MuseumId = entity.MuseumId,
+                            Medium = entity.Medium,
+                            Era = entity.Era,
+                            Types = entity.Types,
                         };
             }
         }
@@ -123,9 +129,13 @@ namespace ArtMuseum.Services
                 
                         new ArtworkListItem
                         {
-                            Artist = e.Artist,
+                            ArtworkId = e.ArtworkId,
                             NameOfPiece = e.NameOfPiece,
-                            ArtworkId =e.ArtworkId,
+                            Artist = e.Artist,
+                            MuseumId = e.MuseumId,
+                            Medium = e.Medium,
+                            Era = e.Era,
+                            Types = e.Types,
                         });
                 return query.ToArray();
             }
@@ -170,7 +180,7 @@ namespace ArtMuseum.Services
 
                         new ArtworkDetail
                         {
-                            ArtworkId= e.ArtworkId,
+                            ArtworkId = e.ArtworkId,
                             NameOfPiece = e.NameOfPiece,
                             Artist = e.Artist,
                             MuseumId = e.MuseumId,
@@ -217,9 +227,10 @@ namespace ArtMuseum.Services
                     ArtworkId = e.ArtworkId,
                     NameOfPiece = e.NameOfPiece,
                     Artist = e.Artist,
+                    MuseumId = e.MuseumId,
                     Medium = e.Medium,
+                    Era = e.Era,
                     Types = e.Types,
-                    Era = e.Era
                 });
                 return query.ToArray();
             }

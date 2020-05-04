@@ -15,6 +15,8 @@ namespace ArtMuseum.Models
 
         public string Artist { get; set; }
 
+        public int MuseumId { get; set; }
+
         public string Medium { get; set; }
 
         public Types Types { get; set; }
