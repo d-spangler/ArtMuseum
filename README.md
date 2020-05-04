@@ -1,4 +1,5 @@
-# ArtMuseum_01
+# ArtMuseum
+
 ## Importing Seed Database
 
 - In order to move migrations into new datatable when starting program you will need to open the package manager console.
