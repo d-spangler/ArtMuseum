@@ -63,3 +63,7 @@ https://www.louvre.fr/en/oeuvre-notices/aphrodite-known-venus-de-milo
 
 12. David
 http://www.accademia.org/explore-museum/artworks/michelangelos-david/
+
+
+## Contributions
+Made by Sydney Vespa, Michael Jolley, and Dylan Spangler
