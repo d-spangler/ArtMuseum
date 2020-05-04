@@ -1,26 +1,33 @@
 # ArtMuseum_01
-New Art Museum
+## Importing Seed Database
 
-To move migrations into new datatable when starting program you will need to open the package manager console. 
-default project needs to be Artwork.Data
-Then type Enable.Migrations
-Then Update-Database
-SQLServerExplorer Refresh and find the database
-You may also find the database hardcoded in ArtMuseum.Data -> Migrations -> Configuration.cs
-
-The following link is to our API Documentation and quick link to run in Postman: https://explore.postman.com/templates/7908/artmuseum
-
-Link to our database wireframing diagram: https://dbdiagram.io/d/5ea1a97e39d18f5553fe1953
-
-Link to our Google excel sheet used for planning: https://docs.google.com/spreadsheets/d/1j0oPDBfJBo2VjKvpEhN-fZKTHD7Gnep-Hf7wWfqigYU/edit?usp=sharing
-
-Sources to Websites Used to Create Content Seeding/Assist with Migrations 
-1.) https://docs.microsoft.com/en-us/aspnet/web-api/overview/data/using-web-api-with-entity-framework/part-3
-2.) https://www.learnentityframeworkcore.com/migrations/seeding
+- In order to move migrations into new datatable when starting program you will need to open the package manager console.
+- The default project needs to be Artwork.Data
+- Then type Enable.Migrations
+- Then Update-Database
+- SQLServerExplorer Refresh and find the database
+- You may also find the database hardcoded in ArtMuseum.Data -> Migrations -> Configuration.cs
 
 
-Sources to Artworks
+## Documentation
 
+- The following link is to our API Documentation and quick link to run in Postman:
+https://explore.postman.com/templates/7908/artmuseum
+
+- Link to our database wireframing diagram: 
+https://dbdiagram.io/d/5ea1a97e39d18f5553fe1953
+
+- Link to our Google excel sheet used for planning: 
+https://docs.google.com/spreadsheets/d/1j0oPDBfJBo2VjKvpEhN-fZKTHD7Gnep-Hf7wWfqigYU/edit?usp=sharing
+
+
+## Sources to Websites Used to Create Content Seeding/Assist with Migrations 
+
+- https://docs.microsoft.com/en-us/aspnet/web-api/overview/data/using-web-api-with-entity-framework/part-3
+- https://www.learnentityframeworkcore.com/migrations/seeding
+
+
+## Sources to Artwork & Museum Websites
 1. Angel Playing The Lute
 http://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-iv---secolo-xv-xvi/melozzo-da-forli--un-angelo-che-suona-il-liuto.html
 
