@@ -1,6 +1,13 @@
 # ArtMuseum_01
 New Art Museum
 
+To move migrations into new datatable when starting program you will need to open the package manager console. 
+default project needs to be Artwork.Data
+Then type Enable.Migrations
+Then Update-Database
+SQLServerExplorer Refresh and find the database
+
+
 Sources
 
 1. Angel Playing The Lute
