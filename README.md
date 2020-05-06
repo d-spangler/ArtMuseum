@@ -9,6 +9,11 @@
 - SQLServerExplorer Refresh and find the database
 - You may also find the database hardcoded in ArtMuseum.Data -> Migrations -> Configuration.cs
 
+## Types and Eras
+We experimented with Enums for the Types and Eras properties of each artwork. They are as follows:
+- Types: 1 = FrescoPainting, 2 = Painting, 3 = Sculpture
+- Eras: 1 = Renaissance, 2 = Realism, 3 = Hellenistic, 4 = Impressionism, 5 = Romantic, 6 = Baroque
+
 
 ## Documentation
 
