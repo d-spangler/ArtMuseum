@@ -15,7 +15,7 @@ We experimented with Enums for the Types and Eras properties of each artwork. Th
 - Eras: 1 = Renaissance, 2 = Realism, 3 = Hellenistic, 4 = Impressionism, 5 = Romantic, 6 = Baroque
 
 
-## Documentation
+## Documentation and Planning
 
 - The following link is to our API Documentation and quick link to run in Postman:
 https://explore.postman.com/templates/7908/artmuseum
